@@ -37,7 +37,7 @@ This project requires a C++ compiler with C++11 support or later and the OpenSSL
 g++ -std=c++11 main.cpp -o main -lssl -lcrypto
 ```
 
-Or on Windows with MSVC (as evidenced by the .exe and .pdb files):
+Or on Windows with MSVC:
 ```bash
 cl /EHsc main.cpp /link libssl.lib libcrypto.lib
 ```

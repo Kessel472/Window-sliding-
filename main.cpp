@@ -22,12 +22,12 @@ array<unsigned char, 16> generateAESKey() {
         throw runtime_error("RAND_bytes failed");
     }
 
-    cout << "AES-128 key (hex): ";
-    for (unsigned char b : key) {
-        cout << hex << setw(2) << setfill('0')
-                  << static_cast<int>(b);
-    }
-    cout << "\n";
+    // cout << "AES-128 key (hex): ";
+    // for (unsigned char b : key) {
+    //     cout << hex << setw(2) << setfill('0')
+    //               << static_cast<int>(b);
+    // }
+    // cout << "\n";
     return key;
 }
 
@@ -61,15 +61,24 @@ int main() {
     //max distinct integers allowed
     int k = 1;
     int result = windowSLider(nums, k);
-      cout << "======================================\n\n"<<endl;
-    cout << "The length of the longest subarray with at most " << k << " distinct integers is: " << result << endl;
-
-    cout << "======================================\n\n"<<endl;
-    cout << "Generated AES Key in main (hex): ";
+     cout << "===================================================================================="<<endl;
+        cout << "Generated AES Key in main (hex): ";
     for (unsigned char b : aesKey) {
         cout << hex << setw(2) << setfill('0')
                   << static_cast<int>(b)<<" ";
 
     }
+    if (result < 4){
+        cout << "\n===================================================================================="<<endl;
+        cout << "The length of the longest subarray with at most " << k << " distinct integers is: " << result << endl;
+        cout << "===================================================================================="<<endl;
+    }
+    else{
+        cout << "\n===================================================================================="<<endl;
+        cout << "The generated AES key exhibits significant bias with Longest subarray length: " << result << endl;
+        cout << "===================================================================================="<<endl;
+    }
+    
+
     return 0;
 }
